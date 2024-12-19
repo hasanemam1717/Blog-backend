@@ -1,12 +1,17 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
+import authRoute from './modules/Auth/auth.route';
 const app = express();
-const port = 3000;
 
-app.use(express.json()), app.use(cors());
+// middleware
+app.use(express.json()),
+    app.use(cors());
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
+// Routes
+app.use('/api/auth', authRoute)
+
+app.get('/', (req: Request, res: Response) => {
+    res.send('Server is running 🏃‍♂️');
 });
 
 export default app;
