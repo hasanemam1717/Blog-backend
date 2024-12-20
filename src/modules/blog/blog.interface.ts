@@ -1,8 +1,9 @@
-import { Types } from 'mongoose'; // Import Types for ObjectId
+import mongoose from "mongoose";
+
 
 export interface TBlog {
     title: string;
     content: string;
-    author: Types.ObjectId;
+    author: mongoose.Types.ObjectId;
     isPublished: boolean;
 }
