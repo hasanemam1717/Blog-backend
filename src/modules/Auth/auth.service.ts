@@ -28,11 +28,16 @@ const logIn = async (payload: TLogInUser) => {
         throw new Error('Invalid credentials')
     }
 
-    const token = jwt.sign({ email: user?.email, role: user?.role }, config.access_token as string, { expiresIn: '30d' })
+    const jwtPayload = {
+        email: user?.email,
+        role: user?.role,
+    };
 
-    const { password, ...remaining } = user
+    const accessToken = jwt.sign(jwtPayload, config.access_token as string, { expiresIn: '30d' })
 
-    return { token }
+    // const { password, ...remaining } = user
+
+    return { accessToken }
 }
 
 

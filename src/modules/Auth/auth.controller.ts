@@ -21,7 +21,7 @@ const logIn = catchAsync(async (req: Request, res: Response) => {
     const result = await authService.logIn(req.body)
     sendResponse(res, {
         statusCode: (httpStatus.CREATED), success: true, message: "Login successful.",
-        token: result?.token,
+        token: result?.accessToken,
         data: result
     })
 })
