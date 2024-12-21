@@ -7,6 +7,11 @@ import { TUserRole } from "../modules/user/user.interface"
 
 const auth = (...requiredRole: TUserRole[]) => {
     return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+
+        // const authToken = `Bearer ${req?.headers?.authorization}`
+
+        // const token = authToken.split(" ")[1]
+
         const token = req?.headers?.authorization
 
         if (!token) {
