@@ -2,7 +2,7 @@ import { Router } from "express";
 import { blogController } from "./blog.controller";
 import auth from "../../middlewares/auth";
 import { USER_ROLE } from "../user/user.constant";
-import { blogUpdateValidationSchema, blogValidationSchema } from "./blog.validation";
+import { blogUpdateValidationSchema, } from "./blog.validation";
 import validateRequest from "../../middlewares/validateRequest";
 
 

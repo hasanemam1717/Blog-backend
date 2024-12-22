@@ -18,7 +18,6 @@ const logIn = async (payload: TLogInUser) => {
     if (!user) {
         throw new Error('User not found.')
     }
-    console.log(user.isBlocked);
     if (user.isBlocked === true) {
         throw new Error('User is blocked.')
     }
@@ -34,9 +33,6 @@ const logIn = async (payload: TLogInUser) => {
     };
 
     const accessToken = jwt.sign(jwtPayload, config.access_token as string, { expiresIn: '30d' })
-
-    // const { password, ...remaining } = user
-
     return { accessToken }
 }
 

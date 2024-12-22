@@ -1,9 +1,9 @@
 
 import { JwtPayload } from "jsonwebtoken";
 import { TBlog } from "./blog.interface";
-import { BlogModel } from "./blog.model";
 import { UserModel } from "../user/user.model";
 import AppError from "../../app/errors/AppError";
+import { BlogModel } from "./blog.model";
 import httpStatus from "http-status";
 
 
