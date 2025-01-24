@@ -6,7 +6,7 @@ import httpStatus from 'http-status';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const notFound = (req: Request, res: Response, next: NextFunction) => {
-    return res.status(httpStatus.NOT_FOUND).json({
+    res.status(httpStatus.NOT_FOUND).json({
         success: false,
         message: 'This API is Not Found !!',
         error: '',

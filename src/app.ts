@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import authRoute from './modules/Auth/auth.route';
@@ -8,6 +9,7 @@ import { AdminRoutes } from './modules/admin/admin.route';
 const app = express();
 
 // middleware
+// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 app.use(express.json()),
     app.use(cors());
 
